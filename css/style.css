@@ -1,0 +1,410 @@
+
+@font-face {
+    font-family: 'latolight';
+    src: url('../fonts/lato-light-webfont.woff2') format('woff2'),
+         url('../fonts/lato-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+        margin: 0px;
+        padding:0;
+     font-size: 14px;
+        font-family: 'latolight';
+        min-height: 100%;
+ font-family: 'latolight';
+           
+    }
+    
+ html, 
+body {
+ 
+     -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+    
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    menu,
+    nav,
+    section,
+    summary {
+        display: block;
+    }
+    
+    input,
+    textarea,
+    button, select {
+        border: 1px solid #e7e7e7;
+        height: 42px;
+        padding: 0 10px;
+        border-radius: 6px;
+        width: 100%;
+          -webkit-appearance: none; 
+          -moz-appearance: none;
+          -ms-appearance: none; 
+          -o-appearance: none; 
+            appearance: none; 
+            
+    }
+
+input[type=submit]{ background-color: #ff4c6e; width: 200px; border: 0; border-radius: 20px; font-size: 20px;}
+
+select{ background-image: url('../images/selectArrow.png'); background-repeat: no-repeat; background-position: 97% 12px;  } 
+
+    * {
+        margin: 0px;
+        padding: 0px;
+        
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    a img {
+        border: 0px;
+    }
+    
+    ul {
+        list-style: none
+    }
+
+    .function_buttons ul{
+      display: inline-flex;
+    }
+    .function_edit,.function_delete{
+      cursor: pointer;
+    }
+    
+    .clearfix:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    
+    .clearfix {
+        display:block;
+    }
+.wrapper{overflow: hidden; width: 100%;}
+.w100{ width: 100% !important}
+
+.bgGray{ background-color: #f1f1f1}
+
+.paT0{ padding-top: 0}
+.pat5{ padding-top: 5px;}
+.pat10{ padding-top: 10px;}
+.pat20{ padding-top: 20px;}
+
+.maB20{ margin-bottom: 20px;}
+
+.col3{ width: 25%}
+.col9{ width: 75%}
+
+.w16{ width: 16.66%; float: left}
+.w25{ width: 25%; float: left}
+.w33{ width: 33.33%; float: left}
+.w50{ width: 50%}
+
+.left{ float: left}
+.right{ float: right}
+
+.w16 .item { padding-right: 10px;}
+
+.container{ width: 1024px; margin: 0px auto; position: relative}
+header{ background-color: #ff6c87; height: 85px; line-height: 80px;}
+header .logo{ float: left; width:80% }
+header .logo img{ float: left; display: block; margin-top: 12px;}
+header .logo div{ font-size: 25px; float: left; margin-left: 15px;}
+header .logo div span{ font-size: 13px;}
+header .menu{ float: right; color: #fff; font-size: 25px; cursor: pointer}
+
+nav{ position: fixed; right:-700px; width:392px; top:0; bottom: 0; background-color: #ff6c87;z-index: 1; max-width: 100%;}
+.navTop li{ width:50%; float: left; text-align: center; border: 1px solid #fb8ca1; background-color: #ff5476; }
+.navTop li a{ color: #fff; font-size: 18px; display: block}
+.navTop li:nth-child(1) a{ font-size: 22px;}
+.navTop li:nth-child(2){ border-right:0;border-left:0}
+.navTop li:hover ul { display: block; background-color: #000}
+
+
+
+nav .navBottom ul li{ line-height: 40px; border-bottom: 1px solid #fb8ca1; cursor:pointer}
+
+nav .navBottom ul li a{ padding: 0 10px 0 20px; color: #fff; display: block;}
+nav .navBottom ul li a:hover{ background-color: #ff5476}
+.close{position: absolute; left: -45px; cursor: pointer; padding: 15px; line-height: 52px;  color: #fff; font-size: 20px;}
+
+.news{ color: #ccc; font-weight: bold; padding: 15px 0; border-bottom: 1px solid #ccc; margin-bottom: 25px;}
+.news span{ color: #000; font-weight: normal}
+
+.welcomeText h1{ padding-bottom:5px; color: #ff486c; font-weight: normal;font-size: 35px;}
+.welcomeText p {color:#282828; padding-bottom: 25px;}
+
+.homeBanner{ margin-bottom: 35px;}
+.homeBanner .left, .homeBanner .right{ position: relative}
+.homeBanner .left img, .homeBanner .right img {display: block}
+.homeBanner .left{ float: left}
+.homeBanner .right{ float: right}
+.homeBanner .note{ position: absolute; bottom: 0; left: 0; right:0; height: 60px; background-image:url('../images/noteBg.png'); padding: 10px; color: #fff; font-size: 16px; font-weight: bold}
+
+.services{ text-align: center}
+.services h2{ font-weight: normal; font-size: 15px; padding-bottom: 25px;}
+.services ul li{ width: 33.33%; float: left; margin:20px 0 35px;}
+.services ul li img{ margin-bottom: 15px;}
+.services ul li h3{ color: #ff4a6e; font-size: 20px; margin-bottom: 5px; }
+.services ul li p{ padding: 0 20px 15px; }
+.services ul li a{color: #ff4a6e; font-size: 16px;}
+
+.services ul li .item .img{ width: 225px; height: 228px;  margin: 0px auto; margin-bottom: 20px; background-image: url('../images/serv6.png'); background-position: center; background-repeat: no-repeat; display: table}
+.services ul li .item .img div{ display: table-cell; vertical-align: middle; text-align: center; padding: 0 25px;}
+.services ul li .item .img div input[type=text] { height: 40px; border:1px solid #ccc; width:100%; border-radius: 20px; margin: 0px auto; margin-bottom: 10px; padding: 0 10px;}
+.services ul li .item .img div input[type=submit]{ background-color: #ff4c6e; padding: 0 20px; height: 30px; border-radius: 15px; cursor: pointer}
+
+
+.innerData{ padding: 30px 0 30px 0; border-top: 1px solid #ccc}
+.leftData{ padding: 0 10px 0 0}
+.leftData em{ padding-bottom: 20px; line-height: 20px;}
+.leftData img{ width: 100%; margin-bottom: 15px;}
+
+.rightData{ padding-left: 40px;}
+.rightData h2{ color: #ff486c; font-size: 22px; font-weight: normal; padding-bottom: 10px; text-transform: uppercase}
+.rightData h3{ color: #ff486c; font-size: 16px; font-weight: normal; padding-bottom: 10px;text-transform: uppercase}
+.rightData p { padding-bottom: 20px; line-height: 20px;}
+
+footer{padding: 15px 0; font-size: 13px; border-top: 1px solid #ccc}
+
+
+/*Form CSS*/
+.formData{ width: 530px;}
+.formData .item{ margin-bottom: 15px;}
+.formData h2{ font-size: 16px; padding: 15px 0; color:#FF6C87;}
+
+.formData .item div.w50{ float: left}
+.formData .item div.w50:nth-child(1) .item{ padding: 0 15px 0 0;} 
+.formData .item div.w33:nth-child(1) .item, .formData .item div.w33:nth-child(2) .item { padding: 0 15px 0 0;} 
+
+/*Members CSS*/
+.members h2{ padding-bottom: 20px;}
+.members ul{ margin-bottom: 20px;}
+.members ul li{ float: left; width: 200px; padding: 10px; border:1px solid #f1f1f1; background-color: #fff; margin-right: 10px; }
+.members ul li img{ width: 100%; }
+
+.members .col-lg-2{ float: left; margin-right: 10px; padding: 10px; border:1px solid #f1f1f1; margin-bottom: 10px;}
+
+span.error{ color:red; font-size:12px;}
+
+#InputNameList{ padding: 10px; border: 1px solid #e7e7e7; margin-top: 5px; border-radius: 6px; height: 350px; overflow-y: auto}
+#InputNameList li { padding-bottom: 10px; text-transform: capitalize; cursor: pointer}
+
+.ShowMsg {right:0px;left:0px;background-color:#ffffff;text-align:center;padding:10px;font-size:23px;height:250px;position:relative;}/*margin-top:-150px;top:50px;*/
+
+
+/*22072017*/
+.famMemberData .item{ float: left; margin-right: 10px;width: 14.28%}
+.btnAdd,.btnSave{ width: 7% !important}
+.famMemberData .btnAdd input, .famMemberData .btnSave input{ width: 100% !important; margin-right: 0; border-radius:6px; font-size: 16px; cursor: pointer}
+.famMemberData .form{ margin-bottom: 15px;}
+
+.famHead{ background-color: #f1f1f1; padding: 10px 0; margin-bottom: 30px; }
+.famHead .container div{ float: left; margin-right: 30px;}
+.famHead .container div span{ font-weight: bold}
+
+
+/*Timepicker*/
+.ti_tx,
+.mi_tx,
+.mer_tx {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.time,
+.mins,
+.meridian {
+  width: 60px;
+  float: left;
+  margin: 0px 10px;
+  font-size: 20px;
+  color: #2d2e2e;
+  font-family: 'arial';
+  font-weight: 700;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  padding: 18px;
+  width: 28%;
+  border: 1px solid #ccc;
+  margin: auto;
+  background: url(../images/arrow.png) no-repeat;
+  border-radius: 5px;
+}
+
+.next { background-position: 50% 150%; }
+
+.prev { background-position: 50% -50%; }
+
+.time_pick { position: relative; }
+
+/*input{ float:left;}*/
+
+.timepicker_wrap {
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 2;
+  display: none;
+  width: 240px;
+  box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
+  background: #f6f6f6;
+  border: 1px solid #ccc;
+  float: left;
+  position: absolute;
+  top: 27px;
+  left: 0px;
+}
+
+.arrow_top {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: url(../images/top_arr.png) no-repeat;
+  width: 18px;
+  height: 10px;
+  z-index: 3;
+}
+/*Timepicker*/
+
+#loading {
+    width: 100%;
+     height: 100%;
+    top: 23%;
+    left: 0;
+    position: absolute;
+     display: block;
+    opacity: 0.7;
+     background-color: #fff;
+    z-index: 99;
+    text-align: center;
+ }
+
+
+
+.srchMatchbtn{ position: absolute; bottom: 20px; width: 200px; left: 50%; margin-left: -100px; background-color: #ff4c6e; padding: 10px;border-radius: 20px;
+font-size: 20px; text-align: center; cursor: pointer; display: none}
+.matchBg{ position: relative}
+.matchBg .searchBox h1{ font-size: 20px; color: #fff; margin-bottom: 40px; display:none}
+.matchBg .searchBox h1 .closeSrch{ float: right; cursor: pointer}
+.matchBg .searchBox{ position: absolute; z-index: 0; left: 10%; right:10%; bottom: 50px;background-color: rgba(0, 0, 0, 0.6); padding: 20px}
+.searchBox .item{ float: left; margin-right: 10px; width: 14%}
+.searchBox .item label{ color:#fff; display: block; margin-bottom: 5px;}
+.searchBox .item input[type=submit]{cursor: pointer; width: 100%; margin-top: 20px}
+.searchBox .item:last-child{ margin-right: 0; width: 10%}
+.searchBox .item .w33 .item{ width: 100%}
+.searchBox .item .w33 .item span{ color: #fff; font-weight: bold; margin-top: 15px; display: block; text-align: center}
+
+.searchDtls { padding: 20px 0}
+.searchDtls .item{ width: 50%; float: left; }
+.searchDtls .item .data{border:1px solid #f1f1f1; padding: 10px; margin: 5px; }
+.searchDtls .userPic{ float:left; margin-right: 20px;}
+.searchDtls .userPic span{ display: block; width: 80px; height: 80px; background-color: #f1f1f1; border-radius: 50%; background-position: center; background-repeat: no-repeat; background-size: cover}
+.searchDtls .userDtls { float: left}
+.searchDtls .userDtls h2{ font-size: 16px; color: #ff6c87; padding-bottom: 5px;}
+.searchDtls .userDtls h3{ padding-bottom: 3px;  font-size: 14px;}
+.searchDtls .userDtls p{ padding-bottom: 5px;}
+.searchDtls .userDtls a{ color:#0194a8; font-size: 14px; cursor: pointer;}
+
+.filter .searchBox{ margin-bottom: 20px;}
+.filter .searchBox .item label{ color:#000; display: block; margin-bottom: 5px;}
+.filter .searchBox .item{ width: 14%}
+.filter .searchBox .item:last-child{ margin-right: 0; width: 10%}
+.filter .searchBox .item .w33 .item{ width: 100%}
+.filter .searchBox .item .w33 .item span{ color: #000; font-weight: bold; margin-top: 15px; display: block; text-align: center}
+
+
+/******************** Extra Css *********************/
+.textbold .item{border-bottom: 1px solid #eee; padding-bottom: 10px;}
+.widthleft {
+    width: 64%;
+    float: left;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+
+/****************** Media Quries ***********************/
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    .searchBox{top: 104%;}
+    .matchSearch {height: 400px;}
+    .searchBox .item{width: 100%;}
+    .matchBg .searchBox {
+    background: #333;
+    height: 262px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*.searchBox .item .w33 .item span{text-align:left !important;}*/
+.searchBox .item:last-child{width:auto;}
+.searchDtls {
+    padding: 286px 0 0 0;
+    clear: both;
+}
+footer{clear:both; text-align:center;}
+.w45xs {
+    width: 45% !important;
+}
+.w10xs {
+    width: 10% !important;
+}
+.searchBox .item{margin-bottom: 10px;}
+input, textarea, button, select{height: 30px;}
+input[type="submit"]{font-size: 16px;}
+.famMemberData .item {
+    float: left;
+    width: 14.28%;
+    width: 46%;
+    margin: 5px;
+}
+select {
+    background-image: url('../images/selectArrow.png');
+    background-repeat: no-repeat;
+    background-position: 97% 7px;
+}
+footer img{text-align:center;}
+input[type="submit"]{width: auto;}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter{padding:10px;}
+.dataTables_wrapper .dataTables_filter input{margin-left:0px !important;}
+.btnAdd, .btnAdd {
+    width: 22% !important;
+}
+nav{width: 70%;}
+.left{width: 100%;}
+.rightData{padding-left: 0px;}
+}
+
+
+
+
+

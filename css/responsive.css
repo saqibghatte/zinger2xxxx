@@ -1,0 +1,48 @@
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+    .container{ width: auto; padding: 0 15px;}    
+}
+
+@media only screen and (max-width: 800px) {
+    
+    
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 767px) {
+    header{ line-height: inherit}
+    header .logo{ width: 90%}
+    header .logo div{ width: 175px; font-size: 22px; margin-top: 20px}
+    header .menu{ margin-top: 25px;}
+    .homeBanner .left, .homeBanner .right{ width: 50%}
+    .homeBanner .left img, .homeBanner .right img {width: 100%}
+    .homeBanner .note{ font-size: 14px;}
+    .formData{ width: inherit}
+    .w33{ width: 100%}
+    .formData .item div.w33:nth-child(1) .item, .formData .item div.w33:nth-child(2) .item{ padding: 0}
+    
+}
+    
+    /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+        .homeBanner .left, .homeBanner .right{ width: 100%; margin-bottom: 10px;}
+    .services ul li{ width: 100%}
+   
+    }
+    /* Custom, iPhone Retina */
+@media only screen and (max-width: 360px) {
+  
+}
+
+    /* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+   
+}

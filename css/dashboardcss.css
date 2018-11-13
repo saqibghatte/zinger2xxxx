@@ -1,0 +1,138 @@
+
+	body {
+	background-image: url("../images/dashboardbg.jpg");
+	
+	}
+	
+	ul {
+     list-style: none;
+	 
+	}
+	
+	.containerdash {
+    width: 1200px;
+    margin: 0px auto;
+	
+
+	}
+	
+
+	
+	.logiExtra li {
+    width: 33.33% !important;
+    float: left;
+
+	}
+	
+	
+	
+	.logiExtra li .item {
+    padding: 60px !important;
+    margin: 20px;
+	background-color: #ff6c87;
+	text-align:center;
+	background-color: rgba(255, 108, 135, 0.9);
+
+	}
+	
+	.logiExtranon li .item {
+    padding: 60px !important;
+    margin: 20px;
+	background-color: #ccc;
+	text-align:center;
+	background-color: rgba(255, 108, 135, 0.9);
+	margin-top:140px;
+
+	}
+	
+	.dashtxtnon h1 {
+		width: 1200px;
+    float: left;
+	margin-top:110px;
+	text-align:center;
+	font-family: arial;
+	font-size: 22px;
+	font-weight:normal;
+	color: #fff;
+	
+	}
+
+	.dashtxt h1 {
+		width: 1200px;
+    float: left;
+	margin-top:140px;
+	text-align:center;
+	font-family: arial;
+	font-size: 22px;
+	font-weight:normal;
+	color: #fff;
+	
+	}
+	
+	.clearfix {
+    display: block;
+	}
+	
+	.animated.flipOutX, .animated.flipOutY, .animated.bounceIn, .animated.bounceOut {
+    animation-duration: .75s
+	
+	}
+	
+@media (min-width: 320px) and (max-width: 767px) {	
+	.containerdash {
+    width: 100%;
+    margin: 0px auto;
+	}
+	
+	.logiExtra li {
+    width: 90% !important;
+
+	}
+	
+	.logiExtra li .item {
+    padding: 10px !important;
+	background-color: #ff6c87;
+	text-align:center;	
+	}
+	
+	.dashtxt h1 {
+	width: 100%;
+    float: left;
+	margin-top:30px;
+	text-align:center;
+	font-family: arial;
+	font-size: 16px;
+	font-weight:normal;
+	color: #fff;
+	
+	}
+
+		.dashtxtnon h1 {
+	width:100%;
+    float: left;
+	margin-top:110px;
+	text-align:center;
+	font-family: arial;
+	font-size: 22px;
+	font-weight:normal;
+	color: #fff;
+	
+	}
+
+	
+
+}
+	
+.menu{
+    margin-top: 26px;
+}	
+
+.navTop li:nth-child(1) a {
+    padding-bottom: 28px;
+    margin-top: 30px;
+}
+	
+footer{
+    margin-top:56px;
+    background: #f9f9f9;
+}	
