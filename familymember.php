@@ -54,12 +54,12 @@
 
     </script>
 
-</head>sdfsdf
+</head>
 
 <body>
     <div class="wrapper">
         <?php require("includes/header.php"); ?>
-
+welcome woman
         <section class="welcomeText pat20">
             <div class="container clearfix">
                 <h1 id="newtype">Add Your Family Member Here</h1>
