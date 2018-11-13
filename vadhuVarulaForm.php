@@ -875,8 +875,7 @@ alert(res);
                             </div>
                         </form>
                     </div>
-
-
+                </div>
             </section>
         </div>
 
@@ -943,15 +942,6 @@ alert(res);
     $mangal=$_POST['selMangal'];
     $kundlipic=$_POST['photoGallery'];
 //    $dateofbirth=$_POST['photoGallery'];
-    
-    
-        
-        
-        
-        
-        
-    
-    
-    
+
     }
 ?>
