@@ -2,7 +2,7 @@
 <html>
 
 <head>
-   <?php require("includes/config.php");
+    <?php require("includes/config.php");
     if(!isLoggedIn())
     {
           header("Location:index.php");
@@ -37,7 +37,15 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jquery.validate.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+
+    <!-- Latest compiled and minified Locales -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
 
 
     <script type="text/javascript">
@@ -51,7 +59,6 @@
             });
         });
 
-
     </script>
 
 </head>
@@ -59,14 +66,13 @@
 <body>
     <div class="wrapper">
         <?php require("includes/header.php"); ?>
-welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
         <section class="welcomeText pat20">
             <div class="container clearfix">
                 <h1 id="newtype">Add Your Family Member Here</h1>
                 <p>Give your identity as an member of the family, you can fill all your family members details.</p>
             </div>
         </section>
-        <form id="familyForm" name="familyForm">
+        <form id="familyForm" name="familyForm" method="post">
             <input type="hidden" id="memberId" name="memberId" value="212">
             <input type="hidden" id="FL_Id" name="FL_Id" value="">
             <section class="clearfix innerData" style="padding-top:0">
@@ -75,7 +81,8 @@ welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
                         <?php if($_SESSION['utype']=="apstm") { ?>
                         <div id="tatsection">Tat Name: <span id="txtPandiName">Pandi/Tat name</span></div>
                         <?php } ?>
-                        <div>Member Name: <span style="text-transform: capitalize;"><?php echo $_SESSION['name']; ?></span></div>
+                        <div>Member Name: <span style="text-transform: capitalize;">
+                                <?php echo $_SESSION['name']; ?></span></div>
                     </div>
                 </div>
                 <div class="container">
@@ -98,7 +105,7 @@ welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
                                 </div>
                             </div>
                             <div class="item">
-                                <input type="text" placeholder="DOB" name="txtDOB" id="txtDOB" />
+                                <input type="date" placeholder="DOB" name="txtDOB" id="txtDOB" />
                             </div>
                             <div class="item">
                                 <input type="text" placeholder="Mobile" name="txtMobile" id="txtMobile" maxlength="10" />
@@ -110,7 +117,7 @@ welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
                                 <input type="text" placeholder="Profession" name="txtProfession" id="txtProfession" maxlength="50" />
                             </div>
                             <div class="item btnAdd">
-                                <input type="submit" value="Add" />
+                                <input type="submit" value="Add" name="submit1" />
                             </div>
 
                         </div>
@@ -128,9 +135,22 @@ welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
             </section>
         </form>
 
+
+        <?php 
+       if(isset($_POST['submit1'])){
+           $date=date('Y-m-d');
+       {
+           $insert_family="INSERT INTO `familymember`(`sr`, `name`, `relation`, `dateofbirth`, `mobile`, `emailID`, `profession`, `addedBy`, `usertype`, `date`) VALUES ('','$_POST[firstname]','$_POST[relationship]','$_POST[txtDOB]','$_POST[txtMobile]','$_POST[txtemail]','$_POST[txtProfession]','$_SESSION[name]','$_SESSION[utype]','$date')";
+           $insert_family_result  = mysqli_query($mysqli,$insert_family); 
+       }
+
+       }
+
+?>
+
         <div class="viewManagerlist">
             <div id="page_container">
-                <table class="datatable table table-striped" id="table_Familylist">
+                <table id="table_id" data-toggle="table" border="1">
                     <thead>
                         <tr>
                             <th>Sr No</th>
@@ -143,8 +163,46 @@ welcome womanjkfhjkgdsdfgjfdgjhfdsgjh
                             <th>Action</th>
                         </tr>
                     </thead>
+                    <?php
+       $show_member="SELECT * FROM `familymember`" ;
+        $show_member_result=mysqli_query($mysqli,$show_member);
+         while($row= mysqli_fetch_assoc($show_member_result)){
+      
+           
+        
+    ?>
+                    <tr>
+                        <td>
+                            <?php echo $row['sr']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['relation']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['dateofbirth']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['mobile']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['emailID']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['profession']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['profession']; ?>
+                        </td>
+                        <?php } ?>
+                    </tr>
+
                 </table>
-                <br><div class="reportDate"><label>Date : </label><span id="spandate"></span></div>
+
+                <br>
+                <div class="reportDate"><label>Date : </label><span id="spandate"></span></div>
             </div>
         </div>
 
