@@ -3,6 +3,12 @@
 <html>
 
 <head>
+    <?php require("includes/config.php");
+    if(!isLoggedIn())
+    {
+          header("Location:index.php");
+    }
+    ?>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -44,7 +50,18 @@
     width: 100%;
     background-image: url('images/transeBlack.png');
 }
-
+#addNewFam{
+    background-color: #666; /* Green */
+    cursor:pointer;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    border-radius:5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+        }
 
 .imageThumb {
   max-height: 75px;
@@ -362,25 +379,6 @@
             }
         });
 
-
-
-        /*$('#btnAddFamilyM').click(function(){
-				if($('#firstname').val() != "" && $('#relationship :selected').val() != "" && $('#txtFQuali').val() != "" && $('#txtRemark').val() != "")	{
-				$("#table_Familylist").append("<tr><td></td><td>"+$('#firstname').val()+"</td><td>"+$('#relationship :selected').val()+"</td><td>"+$('#txtFQuali').val()+"</td><td>"+$('#txtRemark').val()+"</td></tr>");
-				$('#spanErrorF').css('display','none');
-				
-				 var data = table.rows().data();
-		
-		alert(data);
-				}else{
-					$('#spanErrorF').css('display','block');
-				}
-				
-				
-				});*/
-
-
-        /***/
         var FMArray;
         var t = $('#table_Familylist').DataTable();
         var counter = 1;
@@ -538,46 +536,22 @@
             reader.readAsDataURL(input.files[0]);
         }
 
-        /*var data = new FormData(document.getElementById("upload_form"));
-		$.ajax({
-    url : "include/vaduVarulaPhoto.php",
-    type: "POST",
-    data : data,
-    contentType: false,
-    cache: false,
-    processData:false,
-    xhr: function(){
-        
-        var xhr = $.ajaxSettings.xhr();
-        if (xhr.upload) {
-            xhr.upload.addEventListener('progress', function(event) {
-                var percent = 0;
-                var position = event.loaded || event.position;
-                var total = event.total;
-                if (event.lengthComputable) {
-                    percent = Math.ceil(position / total * 100);
-                }
-                
-                $(".progress-bar").css("width", + percent +"%");
-                $(" .status").text(percent +"%");
-            }, true);
-        }
-        return xhr;
-    },
-    mimeType:"multipart/form-data"
-}).done(function(res){ //
-alert(res);
-   //$(result_output).html(res); //output response from server
-   // submit_btn.val("Upload").prop( "disabled", false); //enable submit button once ajax is done
-});
-	*/
-
     }
 
-</script>
+    
+    
+    
+    
+    
+    var x =  ' <div class="container" style="display:inline-block;"> <div class="multiple" id="multiple"> <div class="item"> <input type="text" name="firstname" id="firstname" placeholder="Name" maxlength="50"/> </div><div class="item"> <div class="w100"> <select name="relationship" id="relationship"> <option value="">Select Relation</option> <option value="Father">Father</option> <option value="Mother">Mother</option> <option value="Sister">Sister</option> <option value="Brother">Brother</option> <option value="Other">Other</option> </select> </div></div><div class="item"> <input type="text" placeholder="Qualification" name="txtFQuali" id="txtFQuali" maxlength="50"/> </div><div class="item"> <input type="text" placeholder="Remarks/Service Details" name="txtRemark" id="txtRemark" maxlength="100"/> </div></div></div>'
+
+
+    
+    </script>
 
 
 <body>
+
     <div class="wrapper">
         <header id="header">
 
@@ -737,9 +711,14 @@ alert(res);
                             <div class="clearfix">
                                 <h2>Family Details</h2>
                             </div>
-                            <!---->
-                            <!--<form id="familyForm" name="familyForm">-->
-                            <!--
+
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+
+
+
+
+
                             <input type="hidden" id="memberId" name="memberId" value="212">
                             <section class="clearfix innerData" style="padding-top:0">
 
@@ -747,66 +726,49 @@ alert(res);
                                     <span class="error" id="spanErrorF" style="color:red;display:none;">All Fields Required.</span>
                                     <div class="famMemberData">
                                         <div class="form clearfix">
-                                            <div class="item">
+                                            <div class="multiple" id="multiple">
+                                                <div class="item">
 
-                                                <input type="text" name="firstname" id="firstname" placeholder="Name" maxlength="50" />
+                                                    <input type="text" name="firstname[]" id="firstname" placeholder="Name" maxlength="50" />
 
-                                            </div>
-                                            <div class="item">
-                                                <div class="w100">
-                                                    <select name="relationship" id="relationship">
-                                                        <option value="">Select Relation</option>
-                                                        <option value="Father">Father</option>
-                                                        <option value="Mother">Mother</option>
-                                                        <option value="Sister">Sister</option>
-                                                        <option value="Brother">Brother</option>
-                                                        <option value="Other">Other</option>
-                                                    </select>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="w100">
+                                                        <select name="relationship[]" id="relationship">
+                                                            <option value="">Select Relation</option>
+                                                            <option value="Father">Father</option>
+                                                            <option value="Mother">Mother</option>
+                                                            <option value="Sister">Sister</option>
+                                                            <option value="Brother">Brother</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item">
+                                                    <input type="text" placeholder="Qualification" name="txtFQuali][]" id="txtFQuali" maxlength="50" />
+                                                </div>
+                                                <div class="item">
+                                                    <input type="text" placeholder="Remarks/Service Details" name="txtRemark[]" id="txtRemark" maxlength="100" />
                                                 </div>
                                             </div>
-
-                                            <div class="item">
-                                                <input type="text" placeholder="Qualification" name="txtFQuali" id="txtFQuali" maxlength="50" />
-                                            </div>
-                                            <div class="item">
-                                                <input type="text" placeholder="Remarks/Service Details" name="txtRemark" id="txtRemark" maxlength="100" />
-                                            </div>
-                                            <div class="item btnAdd">
-                                                <input type="button" value="Add" id="btnAddFamilyM" />
-                                            </div>
-
-                                        </div>
-                                        <div class='resp_code frms'>
-                                            <div id="dumdiv" align="center" style=" font-size: 10px;color: #dadada;">
-                                                <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="http://www.hscripts.com"></a>
-                                            </div>
-                                        </div>
+                                
                                     </div>
+
+                                    </div>
+                                <div class="item btnAdd">
+                                   <a id="addNewFam" > ADD</a>
+<!--                                <button id="btnAddFamilyM" > Submit</button>-->
+                            </div>
                                 </div>
                             </section>
-                             </form>
 
-                            <div class="viewManagerlist">
-                                <div id="page_container">
-                                    <table class="datatable table table-striped" id="table_Familylist">
-                                        <thead>
-                                            <tr>
-                                                <th>Sr No</th>
-                                                <th>Name</th>
-                                                <th>Relation</th>
-                                                <th>Qualification</th>
-                                                <th>Remarks/Service</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+        
+                            
+                                                
+                                                                                        
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                                        <tbody>
-                                    </table>
-
-                                </div>
-                            </div>
--->
 
                             <!---->
                             <div class="clearfix">
@@ -889,7 +851,11 @@ alert(res);
         <div id="loading" style="display:none">
             <img id="loading-image" src="images/default.gif" />
         </div>
-
+<script>
+            $('#addNewFam').click(function(){
+                $(".famMemberData").append(x);
+            });
+        </script>
         <footer class="clearfix">
             <div class="container">
                 <span>Â© 2016 akhilpadmashalisamaj.com. All Rights Reserved</span>
@@ -911,7 +877,7 @@ alert(res);
         
         
     $lookingfor=$_POST['selLookingFor'];
-    $profilepic=$_POST['Profilepics'];
+//    $profilepic=$_POST['Profilepics'];
     $name=$_POST['txtname'];
     $dateofbirth=$_POST['txtDOB'];
     $time=$_POST['txtTime'];
@@ -920,7 +886,7 @@ alert(res);
     $complexion=$_POST['txtComplexion'];
     $status=$_POST['txtStatus'];
     $address=$_POST['txtAddress'];
-    $place=$_POST['txtNPlace'];
+    $nplace=$_POST['txtNPlace'];
     $qualification=$_POST['txtQualifi'];
     $special=$_POST['txtSpeciali'];
     $occupation=$_POST['txtOccupation'];
@@ -940,8 +906,52 @@ alert(res);
     $nakshatra=$_POST['txtNakshtra'];
     $rashi=$_POST['txtRashi'];
     $mangal=$_POST['selMangal'];
-    $kundlipic=$_POST['photoGallery'];
-//    $dateofbirth=$_POST['photoGallery'];
+//    $kundlipic=$_POST['photoGallery'];
+        
+        
+        
+        
+        
+//        family details
+        
+        
+        $firstname=$_POST['firstname'];
+        $relationship=$_POST['relationship'];
+        $fqualification=$_POST['txtFQuali'];
+        $remark=$_POST['txtRemark'];
+        
+
+
+        
+        
+        
+        $insert_varvadhu="INSERT INTO `varvadhu`(`varvadhu_id`, `looking_for`, `name`, `dateofbirth`, `time`, `placeofbirth`, `height`, `complexion`, `status`, `address`, `native_place`, `qualification`, `specialization`, `occupation`, `placeofwork`, `employer_detail`, `designation`, `income`, `hobbies`, `write_something`, `property_detail`, `contact_person`, `email`, `contact_address`, `mobile_no`, `telephone`, `kundali_details`, `rashi`, `mangal`, `family_detail_id`) 
+            VALUES ('','$lookingfor','$name',$dateofbirth,'$time','$place','$height','$complexion','$status','$address','$nplace','$qualification','$special','$occupation','$work','$details','$designation','$income','$hobbies','$desc','$yesno','$cperson','$emailid','$caddress','$mobile','$tele','$nakshatra','$rashi','$mangal',1)";
+        echo $insert_varvadhu;
+        
+        $insert_varvadhu_result=mysqli_query($mysqli,$insert_varvadhu);
+        
+        $get_varvadhu_id="SELECT `varvadhu_id` FROM `varvadhu` ORDER by varvadhu_id DESC LIMIT 1";
+        $get_varvadhu_id_result=mysqli_query($mysqli,$get_varvadhu_id);
+        $varvadhu_id=0;
+        while($row=mysqli_fetch_row($get_varvadhu_id_result)){
+            $varvadhu_id=$row[0];
+        }
+        
+        foreach($firstname as $index=>$value){
+            $insert_family_detail="INSERT INTO `varvadhu_family_detail`(`var_family_id`, `var_vadhu_family_id`, `family_fname`, `family_relationship`, `family_qualification`, `family_remark`) 
+            VALUES ('','$varvadhu_id','$firstname[$index]','$relationship[$index]','$fqualification[$index]','$fqualification[$index]')";
+            
+            
+            echo $insert_family_detail;
+
+            
+            $insert_family_detail_result=mysqli_query($mysqli,$insert_family_detail);
+            
+        }
+        
+      
+        
 
     }
 ?>
